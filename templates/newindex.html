@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LuciferGPT - შენი ხელოვნური ასისტენტი</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<script type="text/javascript">
+    function scrollToBottom() {
+        var chatContainer = document.getElementById("chatContainer");
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+</script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Page Title -->
+        <div class="page-title">
+            <div class="row gutters">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <h5 class="title">LuciferGPT</h5>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <!-- Add anything specific for the right side if needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="card m-0">
+                    <div class="row no-gutters">
+                        <!-- Users Container -->
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                            <div class="users-container">
+                                <div class="chat-search-box">
+                                    <div class="input-group">
+                                        <!-- Add anything specific for the search box if needed -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Display Container -->
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
+                            <div class="selected-user">
+                                <span class="name">LuciferGPT</span>
+                            </div>
+
+                            <!-- Chat Messages -->
+                            <div class="chat-container">
+                                <ul class="chat-box chatContainerScroll">
+                                    {% for idx in range(user | length) %}
+                                    <!-- User Message -->
+                                    <li class="chat-left">
+                                        <div class="chat-name">User</div>
+                                        <div class="chat-text">{{ user[idx] }}</div>
+                                        <div class="chat-avatar">
+                                            <!-- Add user avatar if needed -->
+                                        </div>
+                                    </li>
+
+                                    <!-- GPT Message -->
+                                    <li class="chat-right">
+                                        <div class="chat-text">{{ gpt[idx] }}</div>
+                                        <div class="chat-avatar">
+                                            <img src="static/images/lucifer_pfp.jpg" alt="LuciferGPT">
+                                            <div class="chat-name">LuciferGPT</div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+
+                                <!-- User Input Form -->
+                                <div class="form-group mt-3 mb-0">
+                                    <form method="post" action="/chat">
+                                        <textarea class="form-control" name="user_message" id="user_message"
+                                            rows="3" placeholder="Type your message here..."></textarea>
+                                        <button type="submit">Send</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap and jQuery Scripts -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript (if needed) -->
+    <script type="text/javascript">
+        // Add your custom scripts here
+    </script>
+</body>
+
+</html>
