@@ -1,7 +1,6 @@
 flask
 openai
 yandex
-random
 os
 time
 langchain
