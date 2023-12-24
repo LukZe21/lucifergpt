@@ -1,0 +1,11 @@
+flask
+openai
+yandex
+random
+os
+time
+langchain
+requests
+bs4
+google_custom_search
+wikipedia
