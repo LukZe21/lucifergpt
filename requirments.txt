@@ -1,8 +1,6 @@
 flask
 openai
 yandex
-os
-time
 langchain
 requests
 bs4
