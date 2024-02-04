@@ -1,0 +1,226 @@
+Metadata-Version: 2.1
+Name: yandex-translater
+Version: 6.0
+Summary: API for Yandex Translate
+Home-page: https://pypi.org/project/yandex-translater/
+Author: James Axl
+Author-email: axlrose112@gmail.com
+License: BSD
+Keywords: yandex-translater translater yandex translate
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: requests
+
+==================================================
+yandex-translater Yandex Translate Api for Python
+==================================================
+
+:author: James Axl
+:version: 7.0
+:date: 2018-12-02
+
+
+VERSION
+--------
+
+version 7.0
+
+
+DESCRIPTION
+------------
+
+This module uses the Yandex.Translate API for machine translation.
+A Yandex API key is required; see https://translate.yandex.com/developers
+for more information.
+
+Note also that the “Yandex Terms of Use of API Yandex.Translate Service”
+at https://yandex.com/legal/translate_api/ must be observed.
+
+
+Install
+---------
+
+::
+
+   $ pip install yandex-translater
+
+
+SYNOPSIS
+-----------
+
+Translate a Text
+^^^^^^^^^^^^^^^^^
+
+This is a simple example
+
+.. code-block:: pycon
+
+   >>> from yandex.Translater import Translater
+   >>> tr = Translater()
+   >>> tr.set_key('yandex_key') # Api key found on https://translate.yandex.com/developers/keys
+   >>> tr.set_from_lang('en')
+   >>> tr.set_to_lang('ru')
+   >>> tr.translate()
+   Привет
+
+METHODS
+--------
+
+Constructor:
+^^^^^^^^^^^^^
+
+
+.. code-block:: pycon
+    >>> tr = Translater(attributes)
+
+This constructor returns a new object. Optional attributes include:
+
+set_key
+^^^^^^^^
+
+.. code-block:: pycon
+
+   >>> tr.set_key('yandex_key')
+
+This method is used to pass a Yandex API key (string), 
+instead of passing it in Constructor. A tr object can be 
+instantiated without any attributes.
+
+set_text
+^^^^^^^^^
+
+.. code-block:: pycon
+
+   >>> tr.set_text('text_to_translate')
+
+This method is used to pass a text to translate (string).
+
+set_from_lang
+^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+   >>> tr.set_from_lang('zh')
+
+This method is used to pass a source language (string). 
+For example, Chinese would be given as zh.
+
+set_to_lang
+^^^^^^^^^^^^
+
+.. code-block:: python
+
+   >>> tr.set_from_lang('ar')
+
+This method is used to pass a destination language (string). 
+For example, Arabic would be given as ar.
+
+
+set_ui
+^^^^^^^
+
+.. code-block:: python
+
+   >>> tr.set_ui('fr')
+
+This method is used to set the user interface language (string). 
+For example, French would be given as fr.
+
+set_default_ui
+^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+   >>> tr.set_default_ui('ru')
+
+This method is used to set the default user interface language (string). 
+Either ru (Russian) or en (English) or tr (Turkish) can be given.
+
+set_hint
+^^^^^^^^^
+
+.. code-block:: python
+
+   >>> tr.set_hint('es', 'pt')
+
+This method is used to set the list of likely languages for 
+detecting the text language (array reference). For example, 
+Spanish and Portuguese would be given as attributes.
+
+translate
+^^^^^^^^^^
+
+.. code-block:: python
+
+   >>> print tr.translate()
+
+This method is used to get the translated text (string)
+
+detect_lang
+^^^^^^^^^^^^
+
+.. code-block:: python
+
+   >>> print tr.detect_lang()
+
+This method is used to detect the language of the text. It returns a string.
+
+get_langs_list
+^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+   >>> print tr.get_langs_list()
+
+This method is used to get the list of supported translation directions. 
+In array context, it returns an array of these directions; in scalar context, 
+it returns the count of them.
+
+
+SEE ALSO
+---------
+For more information, please visit Yandex <https://translate.yandex.com/developers>.
+
+
+SUPPORT
+--------
+
+Bugs / Feature Requests
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Please report any bugs or feature requests on my email or created in the website.
+yandex-translate-bugs <https://pypi.org/project/yandex-translater/>
+
+
+Source Code
+^^^^^^^^^^^^
+
+This is open source software. The code repository is available for 
+public review and contribution under the terms of the license.
+
+https://pypi.org/project/yandex-translater/
+
+
+AUTHORS
+--------
+
+James Axl <axlrose112@gmail.com>
+
+
+COPYLEFT AND LICENSE
+---------------------
+
+This software is copyleft © 2017 by James Axl.
+
+This is free software; you can redistribute it and/or 
+modify it under the same terms as the Perl 5 programming language system itself.
+
+..
+    vim: filetype=rst
+
+
+
