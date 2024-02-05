@@ -33,7 +33,6 @@ def process_text(text):
 
 
 def get_answer(message):
-    time.sleep(3)
     message = translate_text(message, 'ka', 'en')
     search_query = client.chat.completions.create(
         model='gpt-3.5-turbo-1106',

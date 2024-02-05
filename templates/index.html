@@ -86,7 +86,7 @@
 
     <div id="chat-container">
         <div id="chat-messages-{{ idx }}" class="chat-messages">
-            {% for idx in range(user|length) %}
+        {% for idx in range(user|length) %}
             <div><strong>User:</strong> {{ user[idx] }}</div>
             <div><strong>LuciferGPT:</strong> {{ gpt[idx] }}</div>
         {% endfor %}
