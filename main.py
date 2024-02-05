@@ -32,7 +32,9 @@ def process_text(text):
     return ' '.join(words)
 
 
-def get_answer(message):
+def get_answer(message='გამარჯობა'):
+    if message == None or message == '':
+        message='გამარჯობა'
     message = translate_text(message, 'ka', 'en')
     search_query = client.chat.completions.create(
         model='gpt-3.5-turbo-1106',

@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 user_requests = []
 lucifer_response = []
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def process_text():
     user_msg = request.form.get('user_message')
 
