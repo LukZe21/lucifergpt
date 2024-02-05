@@ -10,7 +10,7 @@ def home():
 
 user_requests = []
 lucifer_response = []
-@app.route('/chat', methods=['POST'])
+@app.route('/', methods=['POST'])
 def process_text():
     user_msg = request.form.get('user_message')
 
