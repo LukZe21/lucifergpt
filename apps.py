@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from main import get_answer
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 
 
 user_requests = []
