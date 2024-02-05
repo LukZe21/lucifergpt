@@ -4,13 +4,14 @@ from main import get_answer
 
 app = Flask(__name__, template_folder="templates")
 
-@app.route('/')
+@app.route('/chat')
+# @app.route('/')
 def home():
     return render_template('index.html')
 
 user_requests = []
 lucifer_response = []
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/chat', methods=['GET', 'POST'])
 def process_text():
     user_msg = request.form.get('user_message')
 
