@@ -4,7 +4,7 @@ from langchain.chat_models import ChatOpenAI
 import os
 from search import google_search
 
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = # your api key
 
 def main_model(user_input):
     query = user_input
