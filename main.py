@@ -6,9 +6,9 @@ import random
 import os
 import time
 
-yandex_api = 'trnsl.1.1.20231218T125713Z.5aedc37fb03eddd5.1a20119c7128cbb5f90c7e7c257a9beb7704cc57'
+yandex_api = # your api key
 
-api_key = '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'
+api_key = # your api key
 client = OpenAI(api_key=api_key)
 
 def translate_text(text, detect='en', target_language='ka'):
