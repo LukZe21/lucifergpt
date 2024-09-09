@@ -7,7 +7,7 @@ import readability
 class NotFound(Exception):
     pass
 
-g_api_key = 'AIzaSyAFumKV5OVJOhBnC0CWsY0Pi0AN5xVCZWg'
+g_api_key = # your api key
 
 google = google_custom_search.CustomSearch(apikey=g_api_key, engine_id="a3b37860c1cdc444e")
 
